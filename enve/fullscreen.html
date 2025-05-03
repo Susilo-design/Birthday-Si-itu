@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fullscreen Message</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Lily+Script+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-100: #8cb369;
+        --primary-200: #70964e;
+        --primary-300: #305612;
+        --accent-100: #f2e9e4;
+        --accent-200: #8f8783;
+        --text-100: #4c4c4c;
+        --text-200: #787878;
+        --bg-100: #d1ead3;
+        --bg-200: #c7e0c9;
+        --bg-300: #a0b8a2;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--bg-100);
+        margin: 0;
+        font-family: "DM Sans", sans-serif;
+      }
+
+      .fullscreen-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+      #message {
+        font-family: "Caveat", serif;
+      }
+
+      .fullscreen-message .text {
+        padding: 1rem 2rem;
+        font-size: 2.8rem;
+        max-width: 90%;
+        max-height: 90%;
+        overflow-y: auto;
+        font-family: "Brush Script MT", cursive;
+        text-align: center;
+        line-height: 1.5;
+        background-color: var(--accent-100);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        color: var(--primary-300);
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .fullscreen-message .text h4 {
+        color: var(--primary-200);
+      }
+
+      @media (max-width: 768px) {
+        .fullscreen-message .text {
+          font-size: 2rem;
+          padding: 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .fullscreen-message .text {
+          font-size: 1.5rem;
+          padding: 0.5rem;
+        }
+      }
+
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      .navigate-button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        color: white;
+        background-color: var(--primary-200);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .navigate-button a {
+        text-decoration: none;
+        color: white;
+        font-family: "Caveat", cursive;
+      }
+
+      .navigate-button:hover {
+        background-color: var(--primary-300);
+      }
+
+      .flower-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+        background-color: var(--bg-200);
+        margin-top: 20px;
+      }
+
+      .flower-animation {
+        width: 100px;
+        height: 100px;
+        background: url("https://via.placeholder.com/100") no-repeat center;
+        background-size: contain;
+        animation: spin 3s linear infinite;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var audio = document.querySelector("audio");
+        if (audio.paused) {
+          audio.play();
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <audio id="background-audio" loop>
+      <source src="/enve/Glue Song.mp3" type="audio/mp3" />
+    </audio>
+    <script>
+      document.addEventListener("mousemove", function () {
+        const audio = document.getElementById("background-audio");
+        audio.play();
+      });
+      document.addEventListener("click", function () {
+        const audio = document.getElementById("background-audio");
+        audio.play();
+      });
+    </script>
+    <div class="fullscreen-message">
+      <div class="text fullscreen">
+        <h4>Dibaca Yaa</h4>
+        <p id="message">
+          pesan Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+          Reiciendis optio iste iure eaque ea officiis consequatur deleniti,
+          perferendis totam. Dolores asperiores itaque maiores, pariatur,
+          aliquid beatae voluptates impedit aperiam libero delectus architecto
+          sequi accusantium reiciendis, saepe veniam cupiditate dolor eveniet
+          animi? Tenetur aperiam quasi, atque neque dignissimos sed dolor
+          pariatur.
+        </p>
+        <button class="navigate-button" onclick="scrollToFlower()">
+          <a href="/enve/animated flower/animated flower.html">Lihat Ini deh</a>
+        </button>
+      </div>
+    </div>
+    <div class="flower-section" id="flowerSection">
+      <div class="flower-animation"></div>
+    </div>
+    <script>
+      function scrollToFlower() {
+        const flowerSection = document.getElementById("flowerSection");
+        flowerSection.scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
+  </body>
+</html>
