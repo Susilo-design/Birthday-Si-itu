@@ -1,20 +1,15 @@
-
-:root{
-  --primary-100:#8CB369;
-  --primary-200:#70964e;
-  --primary-300:#305612;
-  --accent-100:#F2E9E4;
-  --accent-200:#8f8783;
-  --text-100:#4C4C4C;
-  --text-200:#787878;
-  --bg-100:#D1EAD3;
-  --bg-200:#c7e0c9;
-  --bg-300:#a0b8a2;
+:root {
+  --primary-100: #8cb369;
+  --primary-200: #70964e;
+  --primary-300: #305612;
+  --accent-100: #f2e9e4;
+  --accent-200: #8f8783;
+  --text-100: #4c4c4c;
+  --text-200: #787878;
+  --bg-100: #d1ead3;
+  --bg-200: #c7e0c9;
+  --bg-300: #a0b8a2;
 }
-
-
-
-
 
 * {
   padding: 0;
@@ -38,14 +33,14 @@ body {
   -ms-transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-100%, -50%);
-  transition: 1s;
+  transition: 0.2s;
 }
 
 .question-container {
   position: absolute;
   top: 40%;
   left: 50%;
-  transition: 1s;
+  transition: 0.2s;
 }
 .tenor-gif-embed {
   height: 15rem;
